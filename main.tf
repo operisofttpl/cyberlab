@@ -10,7 +10,7 @@ resource "aws_instance" "kali_without" {
   associate_public_ip_address = false
   #private_ip            = true
 
-  vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
+  vpc_security_group_ids = ["sg-0eac44a9a3e56271d"]
   # private subnet 1-b
   #subnet_id = "subnet-039a3303c1b1b15c6"
 
@@ -25,7 +25,7 @@ resource "aws_instance" "kali_demo" {
   key_name      = aws_key_pair.kali-demo-key_pair.key_name
   associate_public_ip_address = false
 
-  vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
+  vpc_security_group_ids = ["sg-0eac44a9a3e56271d"]
   # private subnet 1-b
   #ubnet_id = "subnet-039a3303c1b1b15c6"
 
@@ -41,7 +41,7 @@ resource "aws_instance" "Metasploitable-vagrant" {
   key_name      = aws_key_pair.Metasploitable-vagrant-key-pair.key_name
   associate_public_ip_address = false
 
-  vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
+  vpc_security_group_ids = ["sg-0eac44a9a3e56271d"]
   # private subnet 1-b
   #subnet_id = "subnet-039a3303c1b1b15c6"
 
@@ -57,7 +57,7 @@ resource "aws_instance" "Windows-10-Pro" {
   key_name      = aws_key_pair.Windows-10-key-pair.key_name
   associate_public_ip_address = false
 
-  vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
+  vpc_security_group_ids = ["sg-0eac44a9a3e56271d"]
   # private subnet 1-b
   #subnet_id = "subnet-039a3303c1b1b15c6"
 
@@ -73,7 +73,7 @@ resource "aws_instance" "marlinspike" {
   key_name      = aws_key_pair.marlinspike-key-pair.key_name
   associate_public_ip_address = false
 
-  vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
+  vpc_security_group_ids = ["sg-0eac44a9a3e56271d"]
   # private subnet 1-b
   #subnet_id = "subnet-039a3303c1b1b15c6"
   
