@@ -97,21 +97,21 @@ resource "local_file" "kali-demo-key_pair" {
 
 
 output "kali-soft-key" {
-  value = tls_private_key.kali-demo-key_pair.public_key_openssh
+  value = aws_key_pair.kali-demo-key_pair.public_key_openssh
 }
 
 output "window-server-key" {
-  value = tls_private_key.Windows-10-key-pair.public_key_openssh
+  value = aws_key_pair.Windows-10-key-pair.public_key_openssh
 }
 
 output "metasploitable-server-key" {
-  value = tls_private_key.Metasploitable-vagrant-key-pair.public_key_openssh
+  value = aws_key_pair.Metasploitable-vagrant-key-pair.public_key_openssh
 }
 
 output "marlinspike-key" {
-  value = tls_private_key.marlinspike-key-pair.public_key_openssh
+  value = aws_key_pair.marlinspike-key-pair.public_key_openssh
 }
 
 output "kali-server-key" {
-  value = tls_private_key.kali-without-key-pair.public_key_openssh
+  value = aws_key_pair.kali-without-key-pair.public_key_openssh
 }
