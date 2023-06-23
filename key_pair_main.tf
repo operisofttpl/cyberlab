@@ -7,7 +7,7 @@ resource "tls_private_key" "kali-without-key-pair" {
 
 # Create the Key Pair of kali linux didnt have software
 resource "aws_key_pair" "kali-without-key-pair" {
-  key_name   = "kali-without-key-pair"  
+  key_name   = var.keyname  
   public_key = tls_private_key.kali-without-key-pair.public_key_openssh
 }
 
@@ -20,7 +20,7 @@ resource "tls_private_key" "marlinspike-key-pair" {
 
 # Create the Key Pair of kali software
 resource "aws_key_pair" "marlinspike-key-pair" {
-  key_name   = "marlinspike-key-pair"  
+  key_name   = var.keyname2
   public_key = tls_private_key.marlinspike-key-pair.public_key_openssh
 }
 
@@ -33,7 +33,7 @@ resource "tls_private_key" "Metasploitable-vagrant-key-pair" {
 
 # Create the Key Pair of Metasploitable-vagrant
 resource "aws_key_pair" "Metasploitable-vagrant-key-pair" {
-  key_name   = "Metasploitable-vagrant"  
+  key_name   =  var.keyname3
   public_key = tls_private_key.Metasploitable-vagrant-key-pair.public_key_openssh
 }
 
@@ -46,7 +46,7 @@ resource "tls_private_key" "Windows-10-key-pair" {
 
 # Create the Key Pair
 resource "aws_key_pair" "Windows-10-key-pair" {
-  key_name   = "Windows-10-key-pair"  
+  key_name   = var.keyname4
   public_key = tls_private_key.Windows-10-key-pair.public_key_openssh
 }
 
@@ -59,7 +59,7 @@ resource "tls_private_key" "kali-demo-key_pair" {
 
 # Create the Key Pair
 resource "aws_key_pair" "kali-demo-key_pair" {
-  key_name   = var.keyname5  
+  key_name   = var.keyname5
   public_key = tls_private_key.kali-demo-key_pair.public_key_openssh
 }
 
