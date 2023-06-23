@@ -12,7 +12,7 @@ resource "aws_instance" "kali_without" {
   vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
   
   tags = {
-    Name = var.instance_name
+    Name = var.instance_name1
   }
 }
 
@@ -38,7 +38,7 @@ resource "aws_instance" "Windows-10-Pro" {
   vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
 
   tags = {
-    Name = var.instance_name4
+    Name = var.instance_name3
   }
 }
 
@@ -51,7 +51,7 @@ resource "aws_instance" "marlinspike" {
   vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
   
   tags = {
-    Name = var.instance_name5
+    Name = var.instance_name4
   }
 }
 
