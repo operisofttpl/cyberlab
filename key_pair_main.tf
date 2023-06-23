@@ -93,6 +93,25 @@ resource "local_file" "kali-demo-key_pair" {
   content  = tls_private_key.kali-demo-key_pair.private_key_pem
 }
 
-output "private_key_pem" {
-  value = "${aws_key_pair.kali-demo-key_pair.key_name}.pem"
+
+
+
+output "kali-soft-key" {
+  value = tls_private_key.kali-demo-key_pair.public_key_openssh
+}
+
+output "window-server-key" {
+  value = tls_private_key.Windows-10-key-pair.public_key_openssh
+}
+
+output "metasploitable-server-key" {
+  value = tls_private_key.Metasploitable-vagrant-key-pair.public_key_openssh
+}
+
+output "marlinspike-key" {
+  value = tls_private_key.marlinspike-key-pair.public_key_openssh
+}
+
+output "kali-server-key" {
+  value = tls_private_key.kali-without-key-pair.public_key_openssh
 }
