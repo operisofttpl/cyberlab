@@ -12,5 +12,5 @@ resource "aws_key_pair" "master-key-pair" {
 }
 
 output "master-key" {
-  value = aws_key_pair.master-key-pair.key_name
+  value = tls_private_key.master-key-gen.public_key_openssh
 }
