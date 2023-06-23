@@ -29,19 +29,6 @@ resource "aws_instance" "kali_demo" {
   }
 }
 
-resource "aws_instance" "Metasploitable-vagrant" {
-  ami           = "ami-0a1c4f08269669288"  # Replace with your desired AMI ID
-  instance_type = "t3a.xlarge"  # Replace with your desired instance type
-  key_name      = aws_key_pair.Metasploitable-vagrant-key-pair.key_name
-  associate_public_ip_address = false
-
-  vpc_security_group_ids = ["sg-0c35ee97985a1bb95"]
-  
-  tags = {
-    Name = var.instance_name3
-  }
-}
-
 resource "aws_instance" "Windows-10-Pro" {
   ami           = "ami-00a1eb7c6c201ccfb"  # Replace with your desired AMI ID
   instance_type = "t3a.xlarge"  # Replace with your desired instance type
