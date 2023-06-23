@@ -15,7 +15,7 @@ variable "instance_name3" {
 
 variable "instance_name4" {
   description = "The name to give the EC2 instance"
-  default     = "Windows 10 Pro"
+  default     = "Windows-10-Pro"
 }
 
 variable "instance_name5" {
