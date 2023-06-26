@@ -51,7 +51,7 @@ resource "aws_instance" "kali_without" {
   security_groups = [aws_security_group.master.id]
   
   tags = {
-    Name = var.instance_name
+    Name = var.instance_name1
   }
 }
 
@@ -80,7 +80,7 @@ resource "aws_instance" "Windows-10-Pro" {
   security_groups = [aws_security_group.master.id]
 
   tags = {
-    Name = var.instance_name4
+    Name = var.instance_name3
   }
 }
 
@@ -94,7 +94,7 @@ resource "aws_instance" "marlinspike" {
   security_groups = [aws_security_group.master.id]
   
   tags = {
-    Name = var.instance_name5
+    Name = var.instance_name4
   }
 }
 
