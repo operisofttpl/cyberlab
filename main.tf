@@ -116,7 +116,7 @@ output "private_ip_address4" {
   value = aws_instance.kali_demo.private_ip
 }
 output "master-key" {
-  value = aws_key_pair.master-key-pair.private_key_pem
+  value = aws_key_pair.master-key-pair.key_name
 }
 
 
