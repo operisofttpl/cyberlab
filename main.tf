@@ -135,9 +135,6 @@ output "private_ip_address_marlinspike" {
 output "private_ip_address_Windows_10_pr" {
   value = aws_instance.Windows-10-Pro.private_ip
 }
-output "private_ip_address23" {
-  value = aws_instance.Metasploitable-vagrant.private_ip
-}
 output "private_ip_address4" {
   value = aws_instance.kali_demo.private_ip
 }
