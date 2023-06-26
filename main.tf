@@ -44,7 +44,7 @@ resource "aws_key_pair" "master-key-pair" {
 resource "aws_instance" "kali_without" {
   ami           = "ami-00a1eb7c6c201ccfb"  # Replace with your desired AMI ID
   instance_type = "t3a.large"  # Replace with your desired instance type
-  key_name      = aws_key_pair.master-key-pair.key_name
+  key_name      = aws_key_pair.keypair_name.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
   
@@ -58,7 +58,7 @@ resource "aws_instance" "kali_without" {
 resource "aws_instance" "kali_demo" {
   ami           = "ami-0ca75e400a542b6d0"  # Replace with your desired AMI ID
   instance_type = "t3a.xlarge"  # Replace with your desired instance type
-  key_name      = aws_key_pair.master-key-pair.key_name
+  key_name      = aws_key_pair.keypair_name.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
 
@@ -73,7 +73,7 @@ resource "aws_instance" "kali_demo" {
 resource "aws_instance" "Windows-10-Pro" {
   ami           = "ami-00a1eb7c6c201ccfb"  # Replace with your desired AMI ID
   instance_type = "t3a.xlarge"  # Replace with your desired instance type
-  key_name      = aws_key_pair.master-key-pair.key_name
+  key_name      = aws_key_pair.keypair_name.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
 
@@ -87,7 +87,7 @@ resource "aws_instance" "Windows-10-Pro" {
 resource "aws_instance" "marlinspike" {
   ami           = "ami-039009930521eb60a"  # Replace with your desired AMI ID
   instance_type = "t3a.large"  # Replace with your desired instance type
-  key_name      = aws_key_pair.master-key-pair.key_name
+  key_name      = aws_key_pair.keypair_name.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
 
