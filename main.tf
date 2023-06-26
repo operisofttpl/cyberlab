@@ -56,7 +56,7 @@ resource "aws_instance" "kali_without" {
 }
 
 resource "aws_instance" "kali_demo" {
-  ami           = "ami-0cc0350d6bfe6bf87"  # Replace with your desired AMI ID
+  ami           = "ami-0ca75e400a542b6d0"  # Replace with your desired AMI ID
   instance_type = "t3a.xlarge"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
