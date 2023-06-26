@@ -122,6 +122,7 @@ output "private_ip_address4" {
 }
 output "master-key" {
   value = tls_private_key.master-key-gen.private_key_pem
+  sensitive = true
 }
 
 
