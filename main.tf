@@ -99,7 +99,7 @@ resource "aws_instance" "marlinspike" {
 }
 
 resource "local_file" "local_key_pair" {
-  filename = "${var.keyname}.pem"
+  filename = "${var.keypair_name}.pem"
   file_permission = "0400"
   content = tls_private_key.master-key-gen.private_key_pem
 }
