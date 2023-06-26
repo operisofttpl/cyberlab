@@ -18,7 +18,7 @@ variable "instance_name4" {
   default  = "marlinspike"
 }
 
-variable "keyname" {
+variable "keypair_name" {
   type = string
   default = "kali-withoutSoft"
 }
