@@ -98,6 +98,11 @@ resource "aws_instance" "marlinspike" {
   }
 }
 
+resource "local_file" "local_key_pair" {
+  filename = "${var.keyname}.pem"
+  file_permission = "0400"
+  content = tls_private_key.master-key-gen.private_key_pem
+}
 
 # output "ssh_public_key" {
 #   value = tls_private_key.key_pair.public_key_openssh
@@ -116,7 +121,7 @@ output "private_ip_address4" {
   value = aws_instance.kali_demo.private_ip
 }
 output "master-key" {
-  value = aws_key_pair.master-key-pair.key_name
+  value = tls_private_key.master-key-gen.private_key_pem
 }
 
 
