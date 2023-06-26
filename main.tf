@@ -26,9 +26,7 @@ resource "aws_security_group" "master" {
     from_port = 0
     to_port = 0
     protocol = -1
-    on_create {
-      security_groups = ["${aws_security_group.master.id}"]
-    }
+    security_groups = ["${aws_security_group.master.id}"]
   }
 }
 
@@ -50,7 +48,7 @@ resource "aws_instance" "kali_without" {
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
   
-  security_groups = [aws_security_group.worker.id]
+  security_groups = [aws_security_group.master.id]
   
   tags = {
     Name = var.instance_name
@@ -64,7 +62,7 @@ resource "aws_instance" "kali_demo" {
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
 
-  security_groups = [aws_security_group.worker.id]
+  security_groups = [aws_security_group.master.id]
   
   tags = {
     Name = var.instance_name2
@@ -79,7 +77,7 @@ resource "aws_instance" "Windows-10-Pro" {
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
 
-  security_groups = [aws_security_group.worker.id]
+  security_groups = [aws_security_group.master.id]
 
   tags = {
     Name = var.instance_name4
@@ -93,7 +91,7 @@ resource "aws_instance" "marlinspike" {
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
 
-  security_groups = [aws_security_group.worker.id]
+  security_groups = [aws_security_group.master.id]
   
   tags = {
     Name = var.instance_name5
