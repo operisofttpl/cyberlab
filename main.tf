@@ -117,7 +117,8 @@ output "private_ip_address_Windows_10_pr" {
 output "private_ip_address4" {
   value = aws_instance.kali_demo.private_ip
 }
-
-
+output "master-key" {
+  value = aws_key_pair.master-key-pair.public_key
+}
 
 
