@@ -26,7 +26,7 @@ resource "aws_security_group" "master" {
     from_port = 0
     to_port = 0
     protocol = -1
-    security_groups = ["${aws_security_group.master.id}"]
+    self = true
   }
 }
 
