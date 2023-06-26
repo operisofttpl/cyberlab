@@ -2,10 +2,7 @@ provider "aws" {
   region = "ap-southeast-1"  # Replace with your desired AWS region
 }
 
-
-
-
-# Master security group
+# security group
 resource "aws_security_group" "master" {
   vpc_id = "vpc-0a990671911c535f8"
 
@@ -29,36 +26,9 @@ resource "aws_security_group" "master" {
     from_port = 0
     to_port = 0
     protocol = -1
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-
-# worker security group
-resource "aws_security_group" "master" {
-  vpc_id = "vpc-0a990671911c535f8"
-
-# port 22 for ssh conection
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-# port 3306 for db connection
-  ingress {
-    from_port   = 3389
-    to_port     = 3389
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-# open to all
-  ingress {
-    from_port = 0
-    to_port = 0
-    protocol = -1
-    security_groups = ["${aws_security_group.master.id}"]
+    on_create {
+      security_groups = ["${aws_security_group.master.id}"]
+    }
   }
 }
 
