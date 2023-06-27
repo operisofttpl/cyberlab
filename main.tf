@@ -78,7 +78,7 @@ resource "aws_instance" "kali_demo" {
 
 
 resource "aws_instance" "Windows-10-Pro" {
-  ami           = "ami-00cc4e40230d2154d"  # Replace with your desired AMI ID
+  ami           = "ami-03a0a9973f07ecac2"  # Replace with your desired AMI ID
   instance_type = "t3.xlarge"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
