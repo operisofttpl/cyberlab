@@ -135,6 +135,6 @@ output "win-user" {
   value = "Administrator"
 }
 output "win-password" {
-  value = "i-0e79f152e1ddd7a5d"
+  value = aws_instance.Windows-10-Pro.id
 }
 
