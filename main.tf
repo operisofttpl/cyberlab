@@ -71,8 +71,8 @@ resource "aws_instance" "kali_demo" {
 
 
 resource "aws_instance" "Windows-10-Pro" {
-  ami           = "ami-00a1eb7c6c201ccfb"  # Replace with your desired AMI ID
-  instance_type = "t3a.xlarge"  # Replace with your desired instance type
+  ami           = "ami-00cc4e40230d2154d"  # Replace with your desired AMI ID
+  instance_type = "t3.xlarge"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
   availability_zone = "ap-southeast-1b"
@@ -124,5 +124,10 @@ output "master-key" {
   value = tls_private_key.master-key-gen.private_key_pem
   sensitive = true
 }
-
+output "win-user" {
+  value = "Administrator"
+}
+output "win-password" {
+  value = "i-0e79f152e1ddd7a5d"
+}
 
