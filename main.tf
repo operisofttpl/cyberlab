@@ -28,6 +28,13 @@ resource "aws_security_group" "master" {
     protocol = -1
     self = true
   }
+
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = -1
+    self = true
+  }
 }
 
 resource "tls_private_key" "master-key-gen" {
@@ -117,7 +124,7 @@ output "private_ip_address_marlinspike" {
 output "private_ip_address_Windows_10_pr" {
   value = aws_instance.Windows-10-Pro.private_ip
 }
-output "private_ip_address4" {
+output "private_ip_address_kali_demo" {
   value = aws_instance.kali_demo.private_ip
 }
 output "master-key" {
