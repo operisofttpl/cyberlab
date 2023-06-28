@@ -48,8 +48,9 @@ resource "aws_key_pair" "master-key-pair" {
   public_key = tls_private_key.master-key-gen.public_key_openssh
 }
 
-resource "aws_instance" "kali_without" {
-  ami           = "ami-00a1eb7c6c201ccfb"  # Replace with your desired AMI ID
+# Kali stock server
+resource "aws_instance" "kali_stock_server" {
+  ami           = "ami-0c70ff2ee0a017c68"  # Replace with your desired AMI ID
   instance_type = "t3a.large"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
@@ -62,7 +63,8 @@ resource "aws_instance" "kali_without" {
   }
 }
 
-resource "aws_instance" "kali_demo" {
+# Kali with Burpsuite & Nessus
+resource "aws_instance" "kali_modded" {
   ami           = "ami-0ca75e400a542b6d0"  # Replace with your desired AMI ID
   instance_type = "t3a.xlarge"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
@@ -76,7 +78,22 @@ resource "aws_instance" "kali_demo" {
   }
 }
 
+# Basic Pentesting
+resource "aws_instance" "basic_pentesting" {
+  ami           = "ami-039009930521eb60a"  # Replace with your desired AMI ID
+  instance_type = "t3a.large"  # Replace with your desired instance type
+  key_name      = aws_key_pair.master-key-pair.key_name
+  subnet_id = "subnet-039a3303c1b1b15c6"
+  availability_zone = "ap-southeast-1b"
 
+  security_groups = [aws_security_group.master.id]
+  
+  tags = {
+    Name = var.instance_name4
+  }
+}
+
+# Exploitable Windows
 resource "aws_instance" "Windows-10-Pro" {
   ami           = "ami-03a0a9973f07ecac2"  # Replace with your desired AMI ID
   instance_type = "t3.xlarge"  # Replace with your desired instance type
@@ -91,45 +108,31 @@ resource "aws_instance" "Windows-10-Pro" {
   }
 }
 
-resource "aws_instance" "marlinspike" {
-  ami           = "ami-039009930521eb60a"  # Replace with your desired AMI ID
-  instance_type = "t3a.large"  # Replace with your desired instance type
-  key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-039a3303c1b1b15c6"
-  availability_zone = "ap-southeast-1b"
-
-  security_groups = [aws_security_group.master.id]
-  
-  tags = {
-    Name = var.instance_name4
-  }
-}
-
 resource "local_file" "local_key_pair" {
   filename = "${var.keypair_name}.pem"
   file_permission = "0400"
   content = tls_private_key.master-key-gen.private_key_pem
 }
 
-# output "ssh_public_key" {
-#   value = tls_private_key.key_pair.public_key_openssh
-# }
-
-output "private_ip_address_kali_without_soft" {
-  value = aws_instance.kali_without.private_ip
-}
-output "private_ip_address_marlinspike" {
-  value = aws_instance.marlinspike.private_ip
-}
-output "private_ip_address_Windows_10_pr" {
-  value = aws_instance.Windows-10-Pro.private_ip
-}
-output "private_ip_address_kali_demo" {
-  value = aws_instance.kali_demo.private_ip
-}
-output "master-key" {
+output "PEM file for SSH connection" {
   value = tls_private_key.master-key-gen.private_key_pem
   sensitive = true
+}
+
+output "Kali - stock server" {
+  value = aws_instance.kali_stock_server.private_ip
+}
+
+output "Kali - Burpsuite & Nessus" {
+  value = aws_instance.kali_modded.private_ip
+}
+
+output "Basic Pentesting Server" {
+  value = aws_instance.basic_pentesting.private_ip
+}
+
+output "Exploitable Windows" {
+  value = aws_instance.Windows-10-Pro.private_ip
 }
 output "win-user" {
   value = "Administrator"
