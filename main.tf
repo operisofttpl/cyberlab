@@ -134,10 +134,10 @@ output "Basic Pentesting Server" {
 output "Exploitable Windows" {
   value = aws_instance.Windows-10-Pro.private_ip
 }
-output "win-user" {
+output "Exploitable Windows Username" {
   value = "Administrator"
 }
-output "win-password" {
+output "Exploitable Windows Password" {
   value = aws_instance.Windows-10-Pro.id
 }
 
