@@ -114,30 +114,30 @@ resource "local_file" "local_key_pair" {
   content = tls_private_key.master-key-gen.private_key_pem
 }
 
-output "PEM file for SSH connection" {
+output "pem_file_for_ssh" {
   value = tls_private_key.master-key-gen.private_key_pem
   sensitive = true
 }
 
-output "Kali - stock server" {
+output "kali_stock_server" {
   value = aws_instance.kali_stock_server.private_ip
 }
 
-output "Kali - Burpsuite & Nessus" {
+output "kali_Burpsuite_Nessus" {
   value = aws_instance.kali_modded.private_ip
 }
 
-output "Basic Pentesting Server" {
+output "basic_Pentesting_Server" {
   value = aws_instance.basic_pentesting.private_ip
 }
 
-output "Exploitable Windows" {
+output "exploitable_Windows" {
   value = aws_instance.Windows-10-Pro.private_ip
 }
-output "Exploitable Windows Username" {
+output "exploitable_Windows_Username" {
   value = "Administrator"
 }
-output "Exploitable Windows Password" {
+output "exploitable_Windows_Password" {
   value = aws_instance.Windows-10-Pro.id
 }
 
