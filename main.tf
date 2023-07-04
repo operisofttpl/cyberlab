@@ -50,7 +50,7 @@ resource "aws_key_pair" "master-key-pair" {
 
 # Kali stock server
 resource "aws_instance" "kali_stock_server" {
-  ami           = "ami-0c70ff2ee0a017c68"  # Replace with your desired AMI ID
+  ami           = "ami-04a497df65fbfad75"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
@@ -65,7 +65,7 @@ resource "aws_instance" "kali_stock_server" {
 
 # Kali with Burpsuite & Nessus
 resource "aws_instance" "kali_modded" {
-  ami           = "ami-0ca75e400a542b6d0"  # Replace with your desired AMI ID
+  ami           = "ami-031a91cea29b98441"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
@@ -80,7 +80,7 @@ resource "aws_instance" "kali_modded" {
 
 # Basic Pentesting
 resource "aws_instance" "basic_pentesting" {
-  ami           = "ami-039009930521eb60a"  # Replace with your desired AMI ID
+  ami           = "ami-0f968653a8c66436c"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-039a3303c1b1b15c6"
