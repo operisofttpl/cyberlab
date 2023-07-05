@@ -140,4 +140,8 @@ output "exploitable_Windows_Username" {
 output "exploitable_Windows_Password" {
   value = aws_instance.Windows-10-Pro.id
 }
+output "note" {
+  value = "If unable to perform ssh please wait for sometime \n and try again."
+}
+
 
