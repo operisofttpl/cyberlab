@@ -4,7 +4,7 @@ provider "aws" {
 
 # security group
 resource "aws_security_group" "master" {
-  vpc_id = "vpc-02e6c2d64f5e6e132"
+# vpc_id = "vpc-02e6c2d64f5e6e132"
 
 # port 22 for ssh conection
   ingress {
