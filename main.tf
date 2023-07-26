@@ -53,7 +53,7 @@ resource "aws_instance" "kali_stock_server" {
   ami           = "ami-0f470bccad5f78031"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-01f15a36f0951b892"
+  subnet_id = "subnet-0fa129c7b7544492c"
   availability_zone = "ap-south-1b"
   
   security_groups = [aws_security_group.master.id]
@@ -77,7 +77,7 @@ resource "aws_instance" "kali_stock_server" {
   ami           = "ami-031a91cea29b98441"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-01f15a36f0951b892"
+  subnet_id = "subnet-0fa129c7b7544492c"
   availability_zone = "ap-south-1b"
 
   security_groups = [aws_security_group.master.id]
@@ -92,7 +92,7 @@ resource "aws_instance" "basic_pentesting" {
   ami           = "ami-0f968653a8c66436c"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-01f15a36f0951b892"
+  subnet_id = "subnet-0fa129c7b7544492c"
   availability_zone = "ap-south-1b"
 
   security_groups = [aws_security_group.master.id]
@@ -107,7 +107,7 @@ resource "aws_instance" "Windows-10-Pro" {
   ami           = "ami-03a0a9973f07ecac2"  # Replace with your desired AMI ID
   instance_type = "t3.medium"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-01f15a36f0951b892"
+  subnet_id = "subnet-0fa129c7b7544492c"
   availability_zone = "ap-south-1b"
 
   security_groups = [aws_security_group.master.id]
