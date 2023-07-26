@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "ap-southeast-1"  # Replace with your desired AWS region
+  region = "ap-south-1"  # Replace with your desired AWS region
 }
 
 # security group
 resource "aws_security_group" "master" {
-# vpc_id = "vpc-02e6c2d64f5e6e132"
+  vpc_id = "vpc-02e6c2d64f5e6e132"
 
 # port 22 for ssh conection
   ingress {
