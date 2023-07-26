@@ -61,6 +61,15 @@ resource "aws_instance" "kali_stock_server" {
   tags = {
     Name = var.instance_name1
   }
+  user_data = <<-EOF
+    #!/bin/bash
+    cd /home/kali
+    sudo chmod +x xfce.sh
+    sudo ./xfce.sh
+    sudo apt install -y dbus-x11
+    sudo systemctl enable xrdp --now
+    echo 'kali:kali' | sudo chpasswd
+  EOF
 }
 
 # Kali with Burpsuite & Nessus
