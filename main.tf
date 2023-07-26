@@ -103,7 +103,7 @@ resource "aws_instance" "basic_pentesting" {
 }
 
 # Exploitable Windows
-resource "aws_instance" "Windows-10-Pro" {
+/*resource "aws_instance" "Windows-10-Pro" {
   ami           = "ami-03a0a9973f07ecac2"  # Replace with your desired AMI ID
   instance_type = "t3.medium"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
@@ -132,7 +132,7 @@ output "kali_stock_server" {
   value = aws_instance.kali_stock_server.private_ip
 }
 
-/*output "kali_Burpsuite_Nessus" {
+output "kali_Burpsuite_Nessus" {
   value = aws_instance.kali_modded.private_ip
 }
 
@@ -140,7 +140,7 @@ output "basic_Pentesting_Server" {
   value = aws_instance.basic_pentesting.private_ip
 }
 
-output "exploitable_Windows" {
+/*output "exploitable_Windows" {
   value = aws_instance.Windows-10-Pro.private_ip
 }
 output "exploitable_Windows_Username" {
