@@ -4,7 +4,7 @@ provider "aws" {
 
 # security group
 resource "aws_security_group" "master" {
-  vpc_id = "vpc-0a990671911c535f8"
+  vpc_id = "vpc-02e6c2d64f5e6e132"
 
 # port 22 for ssh conection
   ingress {
@@ -53,8 +53,8 @@ resource "aws_instance" "kali_stock_server" {
   ami           = "ami-04a497df65fbfad75"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-039a3303c1b1b15c6"
-  availability_zone = "ap-southeast-1b"
+  subnet_id = "subnet-0fa129c7b7544492c"
+  availability_zone = "ap-south-1b"
   
   security_groups = [aws_security_group.master.id]
   
@@ -68,8 +68,8 @@ resource "aws_instance" "kali_modded" {
   ami           = "ami-031a91cea29b98441"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-039a3303c1b1b15c6"
-  availability_zone = "ap-southeast-1b"
+  subnet_id = "subnet-0fa129c7b7544492c"
+  availability_zone = "ap-south-1b"
 
   security_groups = [aws_security_group.master.id]
   
@@ -83,8 +83,8 @@ resource "aws_instance" "basic_pentesting" {
   ami           = "ami-0f968653a8c66436c"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-039a3303c1b1b15c6"
-  availability_zone = "ap-southeast-1b"
+  subnet_id = "subnet-0fa129c7b7544492c"
+  availability_zone = "ap-south-1b"
 
   security_groups = [aws_security_group.master.id]
   
@@ -98,8 +98,8 @@ resource "aws_instance" "Windows-10-Pro" {
   ami           = "ami-03a0a9973f07ecac2"  # Replace with your desired AMI ID
   instance_type = "t3.medium"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
-  subnet_id = "subnet-039a3303c1b1b15c6"
-  availability_zone = "ap-southeast-1b"
+  subnet_id = "subnet-0fa129c7b7544492c"
+  availability_zone = "ap-south-1b"
 
   security_groups = [aws_security_group.master.id]
 
