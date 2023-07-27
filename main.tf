@@ -33,7 +33,6 @@ resource "aws_security_group" "master" {
     from_port = 0
     to_port = 0
     protocol = -1
-    self = true
   }
 }
 
@@ -103,8 +102,8 @@ resource "aws_instance" "basic_pentesting" {
 }
 
 # Exploitable Windows
-/*resource "aws_instance" "Windows-10-Pro" {
-  ami           = "ami-03a0a9973f07ecac2"  # Replace with your desired AMI ID
+resource "aws_instance" "Windows-10-Pro" {
+  ami           = "ami-04fc64393c170125d"  # Replace with your desired AMI ID
   instance_type = "t3.medium"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-0fa129c7b7544492c"
@@ -115,7 +114,7 @@ resource "aws_instance" "basic_pentesting" {
   tags = {
     Name = var.instance_name3
   }
-}*/
+}
 
 resource "local_file" "local_key_pair" {
   filename = "${var.keypair_name}.pem"
@@ -140,7 +139,7 @@ output "basic_pentesting" {
   value = aws_instance.basic_pentesting.private_ip
 }
 
-/*output "exploitable_Windows" {
+output "exploitable_Windows" {
   value = aws_instance.Windows-10-Pro.private_ip
 }
 output "exploitable_Windows_Username" {
@@ -148,7 +147,7 @@ output "exploitable_Windows_Username" {
 }
 output "exploitable_Windows_Password" {
   value = aws_instance.Windows-10-Pro.id
-}*/
+}
 output "note" {
   value = "If unable to perform ssh please wait for sometime \n and try again. \nssh -i .\pemfile.pem -N -L 3390:127.0.0.1:3390 kali@[kali_server ip] \n Now connect rdp with 127.0.0.1:3390"
 }
