@@ -30,9 +30,10 @@ resource "aws_security_group" "master" {
   }
 
   egress {
-    from_port = 0
-    to_port = 0
-    protocol = -1
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"  # "-1" represents all protocols
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
