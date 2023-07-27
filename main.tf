@@ -132,11 +132,11 @@ output "kali_server" {
   value = aws_instance.kali_server.private_ip
 }
 
-output "kali_Burpsuite_Nessus" {
+output "metasploit" {
   value = aws_instance.metasploit.private_ip
 }
 
-output "basic_Pentesting_Server" {
+output "basic_pentesting" {
   value = aws_instance.basic_pentesting.private_ip
 }
 
@@ -150,7 +150,7 @@ output "exploitable_Windows_Password" {
   value = aws_instance.Windows-10-Pro.id
 }*/
 output "note" {
-  value = "If unable to perform ssh please wait for sometime \n and try again."
+  value = "If unable to perform ssh please wait for sometime \n and try again. \nssh -i .\pemfile.pem -N -L 3390:127.0.0.1:3390 kali@[kali_server ip] \n Now connect rdp with 127.0.0.1:3390"
 }
 
 
