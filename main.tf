@@ -48,8 +48,8 @@ resource "aws_key_pair" "master-key-pair" {
   public_key = tls_private_key.master-key-gen.public_key_openssh
 }
 
-# Kali stock server
-resource "aws_instance" "kali_stock_server" {
+# Kali rdp
+resource "aws_instance" "kali_server" {
   ami           = "ami-044fae1ff52de4094"  # Replace with your desired AMI ID
   instance_type = "t3a.2xlarge"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
@@ -72,8 +72,8 @@ resource "aws_instance" "kali_stock_server" {
   EOF
 }
 
-# Kali with Burpsuite & Nessus
-resource "aws_instance" "kali_modded" {
+# Metasploit
+resource "aws_instance" "metasploit" {
   ami           = "ami-050d93c8fee50f09f"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
@@ -87,7 +87,7 @@ resource "aws_instance" "kali_modded" {
   }
 }
 
-# Basic Pentesting
+# Basic Pentesting (marlinspike)
 resource "aws_instance" "basic_pentesting" {
   ami           = "ami-031799a944a78f0ae"  # Replace with your desired AMI ID
   instance_type = "t3a.small"  # Replace with your desired instance type
@@ -128,12 +128,12 @@ output "pem_file_for_ssh" {
   sensitive = true
 }
 
-output "kali_stock_server" {
-  value = aws_instance.kali_stock_server.private_ip
+output "kali_server" {
+  value = aws_instance.kali_server.private_ip
 }
 
 output "kali_Burpsuite_Nessus" {
-  value = aws_instance.kali_modded.private_ip
+  value = aws_instance.metasploit.private_ip
 }
 
 output "basic_Pentesting_Server" {
