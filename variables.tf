@@ -1,11 +1,11 @@
 variable "instance_name1" {
   type  = string
-  default  = "kali-withoutSoft"
+  default  = "kali-rdp"
 }
 
 variable "instance_name2" {
   type  = string
-  default  = "kaliLinux_demo"
+  default  = "metasploit"
 }
 
 variable "instance_name3" {
@@ -20,5 +20,5 @@ variable "instance_name4" {
 
 variable "keypair_name" {
   type = string
-  default = "kali-withoutSoft"
+  default = "ssh_key"
 }
