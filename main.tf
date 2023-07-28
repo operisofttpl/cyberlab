@@ -51,7 +51,7 @@ resource "aws_key_pair" "master-key-pair" {
 # Kali rdp
 resource "aws_instance" "kali_server" {
   ami           = "ami-037a1c3dbe88d5d11"  # Replace with your desired AMI ID
-  instance_type = "c6a.xlarge"  # Replace with your desired instance type
+  instance_type = "c5a.xlarge"  # Replace with your desired instance type
   key_name      = aws_key_pair.master-key-pair.key_name
   subnet_id = "subnet-0fa129c7b7544492c"
   availability_zone = "ap-south-1b"
