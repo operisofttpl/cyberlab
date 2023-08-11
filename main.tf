@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-southeast-1"  # Replace with your desired AWS region
+  region = "ap-south-1"  # Replace with your desired AWS region
 }
 
 # security group
