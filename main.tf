@@ -136,6 +136,10 @@ output "metasploit" {
   value = aws_instance.metasploit.private_ip
 }
 
+output "metasploit_user_and_password" {
+  value = "vagrant"
+}
+
 output "marlinspike" {
   value = aws_instance.basic_pentesting.private_ip
 }
