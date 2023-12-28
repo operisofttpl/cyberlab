@@ -69,6 +69,8 @@ resource "aws_instance" "kali_server" {
     sudo apt install -y dbus-x11
     sudo systemctl enable xrdp --now
     echo 'kali:kali' | sudo chpasswd
+    sudo systemctl enable xrdp --now
+    echo 'kali:kali' | sudo chpasswd
   EOF
 }
 
